@@ -1,5 +1,5 @@
 ﻿<div class="app-container" [ngClass]="{ 'bg-light': account }">
-    <!-- main nav -->
+    <!-- main nav
     <nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="account">
         <div class="navbar-nav">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item nav-link">Home</a>
@@ -7,7 +7,36 @@
             <a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a>
             <button (click)="logout()" class="btn btn-link nav-item nav-link">Logout</button>
         </div>
-    </nav>
+    </nav> -->
+
+
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+  
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Ninestars</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+  
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+         
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+  
+    </div>
+  </header><!-- End Header -->
+
 
     <!-- subnav router outlet -->
     <router-outlet name="subnav"></router-outlet>
