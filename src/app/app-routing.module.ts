@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: 'Parfumes', loadChildren: () => import('./parfumes/parfumes.module').then(m => m.ParfumesModule) },
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
