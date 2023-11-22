@@ -23,13 +23,14 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+          <li> <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-         
+          <li *ngIf="account"><a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li *ngIf="isLoggedIn()"><button (click)="logout()" class="btn btn-danger ">Logout</button></li>
+          <li *ngIf="!isLoggedIn()"><button  class="btn btn-danger ">SignIn</button></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
