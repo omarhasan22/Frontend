@@ -2,13 +2,14 @@
 
 import { AccountService } from './_services';
 import { Account, Role } from './_models';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({ selector: 'app-root', templateUrl: 'app.component.html' })
 export class AppComponent implements OnInit {
     Role = Role;
     account?: Account | null;
 
-    constructor(private accountService: AccountService) {
+    constructor(private accountService: AccountService,private route: ActivatedRoute) {
         this.accountService.account.subscribe(x => this.account = x);
     }
 
@@ -24,6 +25,14 @@ export class AppComponent implements OnInit {
         if(this.account!=null) return true
         else return false
     }
+
+    isRegisterRoute(): boolean {
+        // Get the current route's path
+        const currentPath = this.route.snapshot.routeConfig?.path;
+    
+        // Check if the current route is "account/register"
+        return currentPath === 'account/register';
+      }
 
 
 }

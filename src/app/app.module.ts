@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
 import { HeroComponent } from './hero/hero.component';
+import { AddParfumeComponent } from './parfumes/add-parfume.component';
+import { FirstListComponent } from './first-list/first-list.component';
 
 @NgModule({
     imports: [
@@ -24,7 +26,8 @@ import { HeroComponent } from './hero/hero.component';
         AppComponent,
         AlertComponent,
         HomeComponent,
-        HeroComponent
+        HeroComponent,
+        FirstListComponent
     ],
     providers: [
         { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AccountService] },
