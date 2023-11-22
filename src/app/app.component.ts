@@ -26,13 +26,30 @@ export class AppComponent implements OnInit {
         else return false
     }
 
-    isRegisterRoute(): boolean {
-        // Get the current route's path
-        const currentPath = this.route.snapshot.routeConfig?.path;
+    // isRegisterRoute(): boolean {
+    //     // // Get the current route's path
+    //     // const currentPath = this.route.snapshot.routeConfig?.path;
     
-        // Check if the current route is "account/register"
-        return currentPath === 'account/register';
+    //     // // Check if the current route is "account/register"
+    //     // return currentPath === 'account/register'
+
+    //   }
+
+
+       isRegisterRoute(): boolean {
+        let isAccountRegister = false;
+    
+        this.route.url.subscribe(urlSegments => {
+          const currentRoute = urlSegments.map(segment => segment.path).join('/');
+          isAccountRegister = currentRoute.includes('account/register');
+        });
+    
+        return isAccountRegister;
       }
 
 
+
+
+
+      
 }
