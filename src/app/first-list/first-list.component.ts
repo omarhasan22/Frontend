@@ -4,7 +4,8 @@ import { first } from 'rxjs';
 
 @Component({
   selector: 'app-first-list',
-  templateUrl: './first-list.component.html'
+  templateUrl: './first-list.component.html',
+  styleUrls: ['./first-list.component.css']
 })
 export class FirstListComponent implements OnInit{
 

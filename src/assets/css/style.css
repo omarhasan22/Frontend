@@ -12,6 +12,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #212529;
+  background-color: #fbfefaed;
 }
 
 a {
@@ -84,7 +85,7 @@ h6,
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #fff;
+  background: #fbfefaed;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -157,12 +158,12 @@ h6,
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #eb5d1e;
+  color: #7a8e72a3;
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #eb5d1e;
+  background: #7a8e72a3;
   color: #fff;
   padding: 10px 25px;
   margin-left: 30px;
@@ -172,7 +173,7 @@ h6,
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #ee7843;
+  background: #7a8e72a3;
 }
 
 .navbar .dropdown ul {
