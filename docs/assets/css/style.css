@@ -470,11 +470,12 @@ section {
 
 .section-title h2 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 300;
   padding-bottom: 0;
   line-height: 1px;
   margin-bottom: 15px;
-  color: #c2b7b1;
+  color: #eeedcc;
+  text-shadow: -5px 0px 20px #31372c;
 }
 
 .section-title p {
@@ -483,18 +484,19 @@ section {
   position: relative;
   font-size: 32px;
   font-weight: 700;
-  color: #4e4039;
+  color: #eaeac5;
+  text-shadow: 2px 13px 9px #31372c;
 }
 
 .section-title p::after {
   content: "";
   position: absolute;
   display: block;
-  width: 60px;
+  width: 190px;
   height: 2px;
-  background: #eb5d1e;
+  background: #6e856a;
   bottom: 0;
-  left: calc(50% - 30px);
+  left: calc(40% - -33px);
 }
 
 /*--------------------------------------------------------------
@@ -592,7 +594,7 @@ section {
   position: relative;
   overflow: hidden;
   margin: 0 0 40px 0;
-  background: #fff;
+  background: #c7e3bc;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
   border-radius: 15px;
@@ -602,14 +604,14 @@ section {
 
 .services .icon-box:hover {
   transform: translateY(-5px);
-  border-color: #ef7f4d;
+  border-color: #779163;
 }
 
 .services .icon i {
   font-size: 48px;
   line-height: 1;
   margin-bottom: 15px;
-  color: #ef7f4d;
+  color: #779163;
 }
 
 .services .title {
