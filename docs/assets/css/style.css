@@ -499,6 +499,44 @@ section {
   left: calc(40% - -33px);
 }
 
+.noborder p::after {
+  content: ". . . . . . . . . . .";
+  position: absolute;
+  display: block;
+  width: 190px;
+  height: 9px;
+  left: calc(40% - -33px);
+  bottom: 17px;
+  color: #91b28db0;
+  text-shadow: 0px 0px 0px #ffffff;
+ 
+}
+
+.noborder {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.noborder h2 {
+  font-size: 24px;
+  font-weight: 300;
+  padding-bottom: 0;
+  line-height: 1px;
+  margin-bottom: 15px;
+  color: #eeedcc;
+  text-shadow: -5px 0px 20px #31372c;
+}
+
+.noborder p {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  font-size: 32px;
+  font-weight: 700;
+  color: #eaeac5;
+  text-shadow: 2px 13px 9px #31372c;
+}
+
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -900,7 +938,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-  background: #fff;
+  background: #e4ecdf;
   padding: 60px 0;
 }
 
