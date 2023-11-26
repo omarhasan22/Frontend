@@ -8,32 +8,12 @@
     <div class="carousel-inner"   style="min-height: 23rem;"  >
       <div class="carousel-item active">
         <div class="row">
-          <div class="col-md-3">
-            <div class="profile-card-2"><img style="max-width: 100%; height: auto;"  src="assets/img/perfume/1.jpeg" class="img img-responsive">
-                <div class="profile-name">JOHN DOE</div>
-                <div class="profile-username">@johndoesurname</div>
-                <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-            </div>
-        </div>
-        <div class="col-md-3">
-          <div class="profile-card-2"><img style="max-width: 100%; height: auto;"  src="assets/img/perfume/2.jpeg" class="img img-responsive">
-              <div class="profile-name">JOHN DOE</div>
-              <div class="profile-username">@johndoesurname</div>
-              <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-          </div>
-      </div>
-      <div class="col-md-3">
-        <div class="profile-card-2"><img style="max-width: 100%; height: auto;"  src="assets/img/perfume/3.jpeg" class="img img-responsive">
-            <div class="profile-name">JOHN DOE</div>
-            <div class="profile-username">@johndoesurname</div>
-            <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-        </div>
-    </div>
-    <div class="col-md-3">
-      <div class="profile-card-2"><img style="max-width: 100%; height: auto;"  src="assets/img/perfume/4.jpeg" class="img img-responsive">
-          <div class="profile-name">JOHN DOE</div>
-          <div class="profile-username">@johndoesurname</div>
-          <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+      
+    <div class="col-md-3" *ngFor="let parfume of parfumes">
+      <div class="profile-card-2"><img style="max-width: 100%; height: auto;" [src]='"assets/img/perfume/"+parfume.img+".jpeg"'  class="img img-responsive">
+          <div class="profile-name">{{parfume.name}}</div>
+          <div class="profile-username">{{parfume.company}}</div>
+          <!-- <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div> -->
       </div>
   </div>
 
