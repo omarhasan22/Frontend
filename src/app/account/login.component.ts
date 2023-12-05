@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
                    // localStorage.setItem('login', JSON.stringify(this.f.value));
                     const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                     this.router.navigateByUrl(returnUrl);
-                   // this.router.navigate([''], { relativeTo: this.route });
+                    this.router.navigate([''], { relativeTo: this.route });
                 },
                 error: error => {
                     this.alertService.error(error);
