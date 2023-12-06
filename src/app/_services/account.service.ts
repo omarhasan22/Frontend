@@ -46,6 +46,7 @@ export class AccountService {
         console.log("from refr")
         return this.http.post<any>(`${baseUrl}/refresh-token`, {}, { withCredentials: true })
             .pipe(map((account) => {
+                console.log(account)
                 this.accountSubject.next(account);
                 this.startRefreshTokenTimer();
                 return account;
