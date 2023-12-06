@@ -48,9 +48,9 @@ export class LoginComponent implements OnInit {
                     this.submitting = false;
                     // get return url from query parameters or default to home page
                   
-                    console.log(JSON.stringify(this.f))
+                    console.log(JSON.stringify(this.form.value))
                     
-                    localStorage.setItem('login', JSON.stringify(this.f));
+                    localStorage.setItem('login', JSON.stringify(this.form.value));
                     const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                     this.router.navigateByUrl(returnUrl);
                     //this.router.navigate([''], { relativeTo: this.route });
