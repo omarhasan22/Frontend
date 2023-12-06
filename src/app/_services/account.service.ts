@@ -43,6 +43,7 @@ export class AccountService {
     }
 
     refreshToken() {
+        console.log("from refr")
         return this.http.post<any>(`${baseUrl}/refresh-token`, {}, { withCredentials: true })
             .pipe(map((account) => {
                 this.accountSubject.next(account);
