@@ -47,7 +47,6 @@ export class ParfumeService {
     }
 
     getAll() {
-        console.log("getAll")
         return this.http.get<Parfume[]>(`${baseUrl}/getAll`);
     }
 

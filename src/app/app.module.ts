@@ -13,7 +13,8 @@ import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
 import { HeroComponent } from './hero/hero.component';
 import { AddParfumeComponent } from './parfumes/add-parfume.component';
-import { FirstListComponent } from './first-list/first-list.component';
+import { FirstListComponent } from './parfumes/first-list/first-list.component';
+
 
 @NgModule({
     imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ParfumeService } from '@app/_services';
 import { first } from 'rxjs';
 
@@ -10,8 +11,9 @@ import { first } from 'rxjs';
 export class FirstListComponent implements OnInit{
 
   parfumes?:any[];
+  profile?:any;
 
-  constructor(private parfumeService: ParfumeService){}
+  constructor(private parfumeService: ParfumeService,private router: Router){}
   
   ngOnInit(): void {
    
@@ -24,5 +26,13 @@ export class FirstListComponent implements OnInit{
     .subscribe(parfume => this.parfumes = parfume);
   }
 
+  showProfile(id: string){
+
+
+    this.router.navigate(['Parfumes/perfumeProfile', id]);
+    // this.parfumeService.getById(id)
+    // .pipe(first())
+    // .subscribe(parfume => this.profile = parfume);
+  }
 
 }
