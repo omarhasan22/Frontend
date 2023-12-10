@@ -14,6 +14,7 @@ import { HomeComponent } from './home';
 import { HeroComponent } from './hero/hero.component';
 import { AddParfumeComponent } from './parfumes/add-parfume.component';
 import { FirstListComponent } from './parfumes/first-list/first-list.component';
+import { ShowATtypeComponent } from './parfumes/show-attype/show-attype.component';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { FirstListComponent } from './parfumes/first-list/first-list.component';
         AlertComponent,
         HomeComponent,
         HeroComponent,
-        FirstListComponent
+        FirstListComponent,
+        ShowATtypeComponent
+
     ],
     providers: [
         { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AccountService] },

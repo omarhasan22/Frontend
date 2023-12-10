@@ -11,7 +11,6 @@ import { first } from 'rxjs';
 export class FirstListComponent implements OnInit{
 
   parfumes?:any[];
-  profile?:any;
 
   constructor(private parfumeService: ParfumeService,private router: Router){}
   
@@ -27,12 +26,7 @@ export class FirstListComponent implements OnInit{
   }
 
   showProfile(id: string){
-
-
     this.router.navigate(['Parfumes/perfumeProfile', id]);
-    // this.parfumeService.getById(id)
-    // .pipe(first())
-    // .subscribe(parfume => this.profile = parfume);
   }
 
 }

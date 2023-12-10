@@ -50,6 +50,10 @@ export class ParfumeService {
         return this.http.get<Parfume[]>(`${baseUrl}/getAll`);
     }
 
+    getAllTypes(){
+        return this.http.get<Parfume[]>(`${baseUrl}/getAllTypes`);
+    }
+
     getById(id: string) {
         return this.http.get<Parfume>(`${baseUrl}/${id}`);
     }

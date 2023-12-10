@@ -29,6 +29,7 @@ constructor(
 
         name: ['', Validators.required],
         company: ['', Validators.required],
+        type: ['', Validators.required],
         img: ['', Validators.required],
       
     }
@@ -41,7 +42,6 @@ get f() { return this.form.controls; }
 
 
 onSubmit() {
-  console.log(this.form.value)
   this.submitted = true;
 
   // reset alerts on submit
@@ -57,7 +57,7 @@ onSubmit() {
       .pipe(first())
       .subscribe({
           next: () => {
-              this.alertService.success('Registration successful, please check your email for verification instructions', { keepAfterRouteChange: true });
+              this.alertService.success('Adding successful', { keepAfterRouteChange: true });
               this.submitting = false;
             },
           error: error => {

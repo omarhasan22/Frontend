@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PerfumeProfileComponent } from './perfume-profile/perfume-profile.component';
 
 
+
 @NgModule({
   declarations: [
     ParfumesComponent,
