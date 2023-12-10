@@ -6,6 +6,7 @@ import { ParfumesComponent } from './parfumes.component';
 import { AddParfumeComponent } from './add-parfume.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PerfumeProfileComponent } from './perfume-profile/perfume-profile.component';
+import { ShowTypeComponent } from './show-type/show-type.component';
 
 
 
@@ -13,7 +14,8 @@ import { PerfumeProfileComponent } from './perfume-profile/perfume-profile.compo
   declarations: [
     ParfumesComponent,
     AddParfumeComponent,
-    PerfumeProfileComponent
+    PerfumeProfileComponent,
+    ShowTypeComponent
   ],
   imports: [
     CommonModule,

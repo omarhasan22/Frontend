@@ -50,12 +50,16 @@ export class ParfumeService {
         return this.http.get<Parfume[]>(`${baseUrl}/getAll`);
     }
 
-    getAllTypes(){
-        return this.http.get<Parfume[]>(`${baseUrl}/getAllTypes`);
+    getAllType(){
+        return this.http.get<Parfume[]>(`${baseUrl}/getTypes`);
     }
 
     getById(id: string) {
         return this.http.get<Parfume>(`${baseUrl}/${id}`);
+    }
+    
+    getByType(type: string) {
+        return this.http.get<Parfume>(`${baseUrl}/${type}`);
     }
 
     create(params: any) {
