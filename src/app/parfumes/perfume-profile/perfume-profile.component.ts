@@ -14,8 +14,8 @@ export class PerfumeProfileComponent implements OnInit {
  
   perfume?:any;
   // onCart!: any;
-
-  
+  noOfItems:number=0;
+  @Output() dataEvent = new EventEmitter<string>();
  
   constructor(
     private parfumeService: ParfumeService ,
@@ -40,9 +40,12 @@ addToCart(){
   // this.cartService.cartpost(this.perfume.id)
 
   // console.log(this.cartService.accountValue)
-this.cartService.setCard(this.perfume.id)
-console.log(this.cartService.getCart)
-
+// this.cartService.setCard(this.perfume.id)
+// console.log(this.cartService.getCart)
+//this.dataEvent.emit(this.noOfItems+=1);
+// this.cartService.setCart(this.perfume.id);
+// console.log(this.cartService.getCart)
+this.dataEvent.emit("omar");
 }
 
 

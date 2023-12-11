@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 import { AccountService, CartService } from './_services';
 import { Account, Role } from './_models';
@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
     Role = Role;
     account?: Account | null;
     numberOfItems:number=0;
+
     // card?:any;
     constructor(
         private accountService: AccountService,
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
         this.accountService.account.subscribe(x => this.account = x);
         // this.cartService.getCart.subscribe(cart => this.card = cart)
     }
+ 
 
     ngOnInit(): void {
         // this.numberOfItems=this.cartservice.cart.length;
@@ -28,7 +30,10 @@ export class AppComponent implements OnInit {
      //console.log("no: "+this.numberOfItems)
     //   console.log("from app :"+this.cartService.accountValue) 
         // console.log(this.card)
+        console.log(this.cartService.getCart)
 }
+
+
 
     logout() {
         this.accountService.logout();
@@ -61,7 +66,11 @@ export class AppComponent implements OnInit {
       }
 
 
+      receivedData?: string;
 
+      receiveDataFromChild(data: string) {
+        this.receivedData = data;
+      }
 
 
       

@@ -8,24 +8,24 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 
     private cart =  new BehaviorSubject<string | null>(null);
-    getCart = this.cart.asObservable();
-  constructor() {
-    // this.cartSubject = new BehaviorSubject<string | null>(null);
-   }
+    private c:any[]=[];
+    getCart = this.c;
 
-//   private cartSubject: BehaviorSubject<string | null>;
-//   //cart:any[]=[];
+    
 
-//   public get accountValue() {
-//     return this.cartSubject.value;
-// }
+  constructor() {}
 
-// public cartpost(item: string | null){
-//   this.cartSubject.next(item);
-// }
+// //   private cartSubject: BehaviorSubject<string | null>;
+// //   //cart:any[]=[];
 
-setCard(item: string){
-  this.cart.next(item)
+  public get accountValue() {
+    // return this.getCart;
+    return this.c;
+}
+
+public setCart(item: string){
+  // this.cart.next(item)
+  this.c.push(item)
 }
 
 
