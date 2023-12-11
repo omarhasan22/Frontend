@@ -32,6 +32,12 @@
           <li *ngIf="isLoggedIn()"><button (click)="logout()" class="btn btn-danger ">Logout</button></li>
           <li *ngIf="!isLoggedIn()"><button [routerLink]="['/account/register']" style="background-color: #93af87a3;" class="btn">SignIn</button></li>
           <li *ngIf="account"><a *ngIf="account.role === Role.Admin" [routerLink]="['/Parfumes/']" routerLinkActive="active" class="nav-item nav-link">addParfume</a></li>
+          <li class="nav-item cart-icon">
+            <a class="nav-link" href="#">
+              <i class="fa" style="font-size:24px">&#xf07a;</i>
+              <span class='badge badge-warning' id='lblCartCount'></span>
+            </a>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

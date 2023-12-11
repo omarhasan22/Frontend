@@ -9,7 +9,6 @@ import { PerfumeProfileComponent } from './perfume-profile/perfume-profile.compo
 import { ShowTypeComponent } from './show-type/show-type.component';
 
 
-
 @NgModule({
   declarations: [
     ParfumesComponent,

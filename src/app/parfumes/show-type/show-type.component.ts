@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ParfumeService } from '@app/_services';
 import { first } from 'rxjs';
 
@@ -12,7 +12,7 @@ export class ShowTypeComponent {
   
   perfume?:any;
 
-  constructor(private parfumeService: ParfumeService ,private route: ActivatedRoute) {}
+  constructor(private parfumeService: ParfumeService ,private route: ActivatedRoute,private router: Router) {}
 
   ngOnInit() {
     // Retrieve the perfume ID from the route parameters
@@ -24,4 +24,10 @@ export class ShowTypeComponent {
     });
 
 }
+
+
+showProfile(id: string){
+  this.router.navigate(['Parfumes/perfumeProfile', id]);
+}
+
 }

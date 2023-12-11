@@ -1,21 +1,34 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { AccountService } from './_services';
+import { AccountService, CartService } from './_services';
 import { Account, Role } from './_models';
 import { ActivatedRoute } from '@angular/router';
 
-@Component({ selector: 'app-root', templateUrl: 'app.component.html' })
+@Component({ selector: 'app-root',
+ templateUrl: 'app.component.html' ,
+styleUrls: ['./app.component.css'] })
 export class AppComponent implements OnInit {
     Role = Role;
     account?: Account | null;
-
-    constructor(private accountService: AccountService,private route: ActivatedRoute) {
+    numberOfItems:number=0;
+    // card?:any;
+    constructor(
+        private accountService: AccountService,
+        private route: ActivatedRoute,
+        public cartService: CartService
+        ) {
         this.accountService.account.subscribe(x => this.account = x);
+        // this.cartService.getCart.subscribe(cart => this.card = cart)
     }
 
     ngOnInit(): void {
-     
-    }
+        // this.numberOfItems=this.cartservice.cart.length;
+        // console.log("no from "+this.cartservice.cart)
+        //console.log(this.cartservice.cart)
+     //console.log("no: "+this.numberOfItems)
+    //   console.log("from app :"+this.cartService.accountValue) 
+        // console.log(this.card)
+}
 
     logout() {
         this.accountService.logout();
