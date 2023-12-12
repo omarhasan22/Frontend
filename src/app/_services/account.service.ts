@@ -6,6 +6,8 @@ import { map, finalize } from 'rxjs/operators';
 
 import { environment } from '@environments/environment';
 import { Account } from '@app/_models';
+import { JwtInterceptor } from '@app/_helpers';
+import { ɵparseCookieValue } from '@angular/common';
 
 const baseUrl = `${environment.apiUrl}/accounts`;
 
@@ -20,6 +22,7 @@ export class AccountService {
     ) {
         this.accountSubject = new BehaviorSubject<Account | null>(null);
         this.account = this.accountSubject.asObservable();
+        
     }
 
     public get accountValue() {
@@ -29,8 +32,11 @@ export class AccountService {
     login(email: string, password: string) {
         return this.http.post<any>(`${baseUrl}/authenticate`, { email, password }, { withCredentials: true })
             .pipe(map(account => {
+                const x =this.accountSubject.value?.jwtToken;
+                //sessionStorage.setItem('accessToken', x);
                 this.accountSubject.next(account);
                 this.startRefreshTokenTimer();
+                console.log("jwt "+x)
                 return account;
             }));
     }
@@ -46,7 +52,7 @@ export class AccountService {
         console.log("from refr")
         return this.http.post<any>(`${baseUrl}/refresh-token`, {}, { withCredentials: true })
             .pipe(map((account) => {
-                console.log(account)
+                //console.log(account)
                 this.accountSubject.next(account);
                 this.startRefreshTokenTimer();
                 return account;

@@ -22,7 +22,7 @@
   
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#home" >Home</a></li>
           <li> <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
@@ -30,8 +30,8 @@
           <li *ngIf="account"><a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li *ngIf="isLoggedIn()"><button (click)="logout()" class="btn btn-danger ">Logout</button></li>
-          <li *ngIf="!isLoggedIn()"><button [routerLink]="['/account/register']" style="background-color: #93af87a3;" class="btn">SignIn</button></li>
-          <li *ngIf="account"><a *ngIf="account.role === Role.Admin" [routerLink]="['/Parfumes/']" routerLinkActive="active" class="nav-item nav-link">addParfume</a></li>
+          <li style="margin-left: 1rem;" *ngIf="!isLoggedIn()"><button [routerLink]="['/account/register']" style="background-color: #93af87a3;" class="btn">SignIn</button></li>
+          <li style="margin-left: 1rem;" *ngIf="account"><a *ngIf="account.role === Role.Admin" [routerLink]="['/Parfumes/']" routerLinkActive="active" class="nav-item nav-link">addParfume</a></li>
           <li class="nav-item cart-icon">
             <a type="button" data-bs-toggle="modal" data-bs-target="#myModal">
               <i class="fa" style="font-size:24px">&#xf07a;</i>
