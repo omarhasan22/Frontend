@@ -33,18 +33,50 @@
           <li *ngIf="!isLoggedIn()"><button [routerLink]="['/account/register']" style="background-color: #93af87a3;" class="btn">SignIn</button></li>
           <li *ngIf="account"><a *ngIf="account.role === Role.Admin" [routerLink]="['/Parfumes/']" routerLinkActive="active" class="nav-item nav-link">addParfume</a></li>
           <li class="nav-item cart-icon">
-            <a class="nav-link" href="#">
+            <a type="button" data-bs-toggle="modal" data-bs-target="#myModal">
               <i class="fa" style="font-size:24px">&#xf07a;</i>
-              <span class='badge badge-warning' id='lblCartCount'></span>
+              <span class='badge badge-warning' id='lblCartCount'>{{itemCount()}}</span>
             </a>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-  
+      
     </div>
   </header><!-- End Header -->
 
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen modal-dialog-end">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Show Your Cart Items</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div >
+            
+            <ul class="list-group list-group-light">
+
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let i of items">
+                <div class="d-flex align-items-center">
+                  <img [src]='"assets/img/perfume/"+i.img+".jpeg"' class="rounded-circle" alt=""
+                    style="width: 45px; height: 45px" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{i.name}}</p>
+                    <p class="text-muted mb-0">{{i.company}}</p>
+                  </div>
+                </div>
+                <span class="rounded-pill">Price</span>
+              </li>
+            </ul>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- subnav router outlet -->
     <router-outlet name="subnav"></router-outlet>
@@ -52,6 +84,7 @@
     <!-- global alert -->
     <alert></alert>
 
+    
     <!-- main router outlet -->
     <router-outlet></router-outlet>
 </div>

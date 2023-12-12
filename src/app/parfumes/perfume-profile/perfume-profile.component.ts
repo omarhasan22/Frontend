@@ -34,18 +34,9 @@ export class PerfumeProfileComponent implements OnInit {
 
 }
 
-addToCart(){
- // localStorage.setItem(this.perfume.name, this.perfume.id)
-  //this.cartService.cart.push(this.perfume.id)
-  // this.cartService.cartpost(this.perfume.id)
-
-  // console.log(this.cartService.accountValue)
-// this.cartService.setCard(this.perfume.id)
-// console.log(this.cartService.getCart)
-//this.dataEvent.emit(this.noOfItems+=1);
-// this.cartService.setCart(this.perfume.id);
-// console.log(this.cartService.getCart)
-this.dataEvent.emit("omar");
+addToCart(perfume:any){
+this.cartService.addToCart(perfume);
+window.alert("added to cart")
 }
 
 

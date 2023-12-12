@@ -10,7 +10,7 @@ styleUrls: ['./app.component.css'] })
 export class AppComponent implements OnInit {
     Role = Role;
     account?: Account | null;
-    numberOfItems:number=0;
+    items=this.cartService.getItems();
 
     // card?:any;
     constructor(
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
      //console.log("no: "+this.numberOfItems)
     //   console.log("from app :"+this.cartService.accountValue) 
         // console.log(this.card)
-        console.log(this.cartService.getCart)
+       
 }
 
 
@@ -72,6 +72,8 @@ export class AppComponent implements OnInit {
         this.receivedData = data;
       }
 
-
-      
+itemCount(){
+  return this.cartService.itemsCount()
+}
+    
 }
