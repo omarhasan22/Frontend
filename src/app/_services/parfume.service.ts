@@ -57,6 +57,10 @@ export class ParfumeService {
     getById(id: string) {
         return this.http.get<Parfume>(`${baseUrl}/${id}`);
     }
+
+    getByIdA(id: string) {
+        return this.http.get<Parfume>(`${baseUrl}/A/${id}`);
+    }
     
     getByType(type: string) {
         return this.http.get<Parfume>(`${baseUrl}/getType/${type}`);

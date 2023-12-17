@@ -1,8 +1,9 @@
 ﻿import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
-import { AccountService, CartService } from './_services';
+import { AccountService, CartService, ParfumeService } from './_services';
 import { Account, Role } from './_models';
 import { ActivatedRoute } from '@angular/router';
+import { first, pipe } from 'rxjs';
 
 @Component({ selector: 'app-root',
  templateUrl: 'app.component.html' ,
@@ -10,7 +11,12 @@ styleUrls: ['./app.component.css'] })
 export class AppComponent implements OnInit {
     Role = Role;
     account?: Account | null;
-    items=this.cartService.getItems();
+   // items=this.showItems("cart");
+    
+    items?:any[];
+    
+   // cartCookiesArray = Object.entries(this.items);
+
 
     // card?:any;
     constructor(
@@ -24,13 +30,13 @@ export class AppComponent implements OnInit {
  
 
     ngOnInit(): void {
-        // this.numberOfItems=this.cartservice.cart.length;
-        // console.log("no from "+this.cartservice.cart)
-        //console.log(this.cartservice.cart)
-     //console.log("no: "+this.numberOfItems)
-    //   console.log("from app :"+this.cartService.accountValue) 
-        // console.log(this.card)
-       
+    // this.items = this.getItemsFromCookies()
+ 
+    
+ // console.log(this.cartService.getItemsFromCookies())
+    //   let cartCookies = this.getCookiesWithPrefix('cart');
+    //   let itemsFromCookies = this.getItemsFromCookies(cartCookies.map(cookie => cookie.value));
+    // //  console.log(itemsFromCookies)
 }
 
 
@@ -66,14 +72,22 @@ export class AppComponent implements OnInit {
       }
 
 
-      receivedData?: string;
+      // receivedData?: string;
 
-      receiveDataFromChild(data: string) {
-        this.receivedData = data;
-      }
+      // receiveDataFromChild(data: string) {
+      //   this.receivedData = data;
+      // }
 
-itemCount(){
-  return this.cartService.itemsCount()
-}
+  itemCount(){
+    return this.cartService.itemsCount()
+  }
+
+
+
+
+
+  
+
+
     
 }

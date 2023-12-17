@@ -35,7 +35,8 @@ export class PerfumeProfileComponent implements OnInit {
 }
 
 addToCart(perfume:any){
-this.cartService.addCookie( perfume.name, perfume.id, { expires: 3600, path: '/', samesite: 'None', secure: true });
+  const cartCookieName = "cart" + perfume.name
+this.cartService.addCookie( cartCookieName, perfume.id, { expires: 3600, path: '/', samesite: 'None', secure: true });
 window.alert("added to cart")
 }
 

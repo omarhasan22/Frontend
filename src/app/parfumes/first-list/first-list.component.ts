@@ -18,6 +18,7 @@ export class FirstListComponent implements OnInit{
   ngOnInit(): void {
    
     this.getAllParfumes();
+
   }
   
   getAllParfumes(){

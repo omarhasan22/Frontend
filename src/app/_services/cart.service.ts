@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Cart } from '@app/_models/cart';
 import { BehaviorSubject } from 'rxjs';
 import { Parfume } from '@app/_models';
+import { ParfumeService } from './parfume.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,19 @@ export class CartService {
 
 items: Parfume[]=[];
 
-  constructor() {}
+  constructor(private parfumeService : ParfumeService) {}
 
   addToCart(perfume :Parfume){
     
     this.items.push(perfume)
   }
 
+geti(){
+ return this.items;
+}
+
   getItems(name:any){
-    // return this.items;
+    
     const cookies = document.cookie.split("; ");
     for (let i = 0; i < cookies.length; i++) {
       const parts = cookies[i].split("=");
@@ -32,13 +37,27 @@ items: Parfume[]=[];
   }
 
   itemsCount(){
-    return this.items.length;
+    const prefix="cart";
+    // return this.items.length;
+    const cookies = document.cookie.split("; ");
+    let count = 0;
+  
+    for (let i = 0; i < cookies.length; i++) {
+      const parts = cookies[i].split("=");
+      const currentCookieName = decodeURIComponent(parts[0]).trim();
+  
+      if (currentCookieName.length >= 4 && currentCookieName.substring(0, 4) === prefix) {
+        count++;
+      }
+    }
+  
+    return count;
   }
 
-  clearCart(){
-    this.items=[];
-    return this.items;
-  }
+  // clearCart(){
+  //   this.items=[];
+  //   return this.items;
+  // }
 
 
   deleteCookie(name:any){
@@ -48,6 +67,7 @@ items: Parfume[]=[];
   
 
    addCookie(name:any, value:any, options:any) {
+   
     options = options || {};
   
     if (options.expires) {
@@ -72,11 +92,53 @@ items: Parfume[]=[];
     ].join("");
   }
 
+  getCookiesWithPrefix(): { name: string, value: string }[]{
+     const prefix ="cart";
+    const cookies = document.cookie.split("; ");
+    const matchingCookies: { name: string, value: string }[] = [];
+  
+    for (const cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split("=");
+  
+      if (cookieName.trim().startsWith(prefix)) {
+        matchingCookies.push({ name: cookieName.trim(), value: cookieValue.trim() });
+      }
+    }
+  
+    return matchingCookies;
+  
+}
 
+  // getItemsFromCookies(): any[] {
+  //   const cookieValues = this.getCookiesWithPrefix()
+  //   const items: any[] = [];
+  
+  //   for (const value of cookieValues) {
+  //     const item = this.parfumeService.getByIdA(value.value)
+  //     console.log(value.value)
+  //     items.push(item);
+  //   }
+  
+  //   return items;
+  // }
 
+  // getItemsFromCookies(): Parfume[] {
+  //   const cookieValues = this.getCookiesWithPrefix();
+  //   const items: Parfume[] = [];
 
+  //   for (const value of cookieValues) {
+  //     const item = this.parfumeService.getById(value.value);
+  //     console.log(item.name)
+  //     const itemForNgFor: Parfume = {
+  //       name: item.name,
+  //       company: item.company
+  //       // Add more properties as needed
+  //     };
+  //     items.push(itemForNgFor);
+  //   }
 
-
+  //   return items;
+  // }
 
 
 }
