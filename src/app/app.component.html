@@ -27,8 +27,8 @@
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li *ngIf="account"><a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li *ngIf="isLoggedIn()"><button  style="margin-left: 1rem;"(click)="logout()" class="btn btn-danger ">Logout</button></li>
-          <li  *ngIf="!isLoggedIn()"><button style="margin-left: 1rem;" [routerLink]="['/account/register']" style="background-color: #93af87a3;" class="btn">SignIn</button></li>
+          <li style="margin-left: 1rem;" *ngIf="isLoggedIn()"><button  (click)="logout()" class="btn btn-danger ">Logout</button></li>
+          <li  style="margin-left: 1rem;" *ngIf="!isLoggedIn()"><button [routerLink]="['/account/register']" style="background-color: #93af87a3;" class="btn">SignIn</button></li>
           <li  *ngIf="account"><a  *ngIf="account.role === Role.Admin" [routerLink]="['/Parfumes/']" routerLinkActive="active" class="nav-item nav-link">addParfume</a></li>
           <li class="nav-item cart-icon">
             <a type="button" data-bs-toggle="modal" data-bs-target="#myModal">
