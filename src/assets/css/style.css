@@ -397,7 +397,7 @@ h6,
 
 @media (max-width: 991px) {
   #hero {
-    height: calc(100vh - 72px);
+    height: calc(100vh - 178px);
   }
 
   #hero .animated {
