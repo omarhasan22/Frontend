@@ -11,14 +11,14 @@
 
 
  <!-- ======= Header ======= -->
- <header id="header" class="fixed-top d-flex align-items-center" >
+ <!-- <header id="header" class="fixed-top d-flex align-items-center" >
     <div class="container d-flex align-items-center justify-content-between">
   
       <div class="logo">
         <h1 class="text-light"><a href="index.html"><span>Ninestars</span></a></h1>
        </div>
   
-      <nav id="navbar" class="navbar" >
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" >
         <ul>
           <li><a class="nav-link scrollto" href="#home" >Home</a></li>
           <li> <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a></li>
@@ -45,10 +45,47 @@
       </nav>
       
     </div>
-  </header> 
+  </header>  -->
 
 
 
+  <nav id="navbar" class=" fixed-top navbar navbar-expand-lg navbar-light bg-light" > 
+  <div class="container-fluid">  
+    
+    <a class="navbar-brand" href="#">Omar22</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <div class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item"><a class="nav-link" href="#home" >Home</a></li>
+          <li class="nav-item"> <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a></li>
+          <li class="nav-item" *ngIf="account"><a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a></li>
+          <li class="nav-item"><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li class="nav-item"> 
+            <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form></li>
+        </div>
+        <li style="list-style-type: none;" class="nav-item" *ngIf="isLoggedIn()"><button  (click)="logout()" class="btn btn-danger ">Logout</button></li>
+        <li style="list-style-type: none;" class="nav-item"  *ngIf="!isLoggedIn()"><button [routerLink]="['/account/register']" style="background-color: #93af87a3;" class="btn">SignIn</button></li>
+        <li style="list-style-type: none;" class="nav-item"  *ngIf="account"><a  *ngIf="account.role === Role.Admin" [routerLink]="['/Parfumes/']" routerLinkActive="active" class="nav-item nav-link">addParfume</a></li>
+        
+        <a type="button" data-bs-toggle="modal" data-bs-target="#myModal" style="width: fit-content; padding: 16px 0px 15px 0px;">
+          <i class="fa" style="font-size:24px">&#xf07a;</i>
+          <span class='badge badge-warning' id='lblCartCount'>{{itemCount()}}</span>
+        </a>
+       
+    </div>
+  
+      
+      </div>
+      </nav>
+      
+    
+ 
 
 
 
