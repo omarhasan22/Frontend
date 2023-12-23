@@ -32,11 +32,11 @@ export class AccountService {
     login(email: string, password: string) {
         return this.http.post<any>(`${baseUrl}/authenticate`, { email, password }, { withCredentials: true })
             .pipe(map(account => {
-                const x =this.accountSubject.value?.jwtToken;
+              //  const x =this.accountSubject.value?.jwtToken;
                 //sessionStorage.setItem('accessToken', x);
                 this.accountSubject.next(account);
                 this.startRefreshTokenTimer();
-                console.log("jwt "+x)
+               // console.log("jwt "+x)
                 return account;
             }));
     }
