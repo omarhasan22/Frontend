@@ -13,8 +13,7 @@ import { first } from 'rxjs';
 export class PerfumeProfileComponent implements OnInit {
  
   perfume?:any;
-  // onCart!: any;
-  noOfItems:number=0;
+
   @Output() dataEvent = new EventEmitter<string>();
  
   constructor(
@@ -35,9 +34,8 @@ export class PerfumeProfileComponent implements OnInit {
 }
 
 addToCart(perfume:any){
-  const cartCookieName = "cart" + perfume.name
-this.cartService.addCookie( cartCookieName, perfume.id, { expires: 3600, path: '/', samesite: 'None', secure: true });
-window.alert("added to cart")
+  this.cartService.addToCart(perfume);
+  window.alert("added to cart")
 }
 
 

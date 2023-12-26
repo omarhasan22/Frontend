@@ -12,6 +12,8 @@
         <input type="text" formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }" />
         <label class="form-label">img</label>
         <input type="text" formControlName="img" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.img.errors }" />
+        <label class="form-label">price</label>
+        <input type="text" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
         
         <div class="mb-3">
             <button [disabled]="submitting" class="btn btn-primary">

@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     account?: Account | null;
    // items=this.showItems("cart");
     
-    items?:any[];
+    cart?:any[];
     
    // cartCookiesArray = Object.entries(this.items);
 
@@ -25,18 +25,17 @@ export class AppComponent implements OnInit {
         public cartService: CartService
         ) {
         this.accountService.account.subscribe(x => this.account = x);
+        // this.cart = this.cartService.getCart();
+        // console.log(this.cart)
         // this.cartService.getCart.subscribe(cart => this.card = cart)
     }
  
 
     ngOnInit(): void {
-    // this.items = this.getItemsFromCookies()
- 
-    
- // console.log(this.cartService.getItemsFromCookies())
-    //   let cartCookies = this.getCookiesWithPrefix('cart');
-    //   let itemsFromCookies = this.getItemsFromCookies(cartCookies.map(cookie => cookie.value));
-    // //  console.log(itemsFromCookies)
+      this.cartService.getCartObservable().subscribe((cart) => {
+        this.cart = cart;
+      });
+      this.cart = this.cartService.getCart();
 }
 
 
@@ -72,19 +71,32 @@ export class AppComponent implements OnInit {
       }
 
 
-      // receivedData?: string;
 
-      // receiveDataFromChild(data: string) {
-      //   this.receivedData = data;
-      // }
 
+
+      
   itemCount(){
-    return this.cartService.itemsCount()
+    return this.cartService.getCartItemCount()
   }
 
+  removeFromCart(item: any): void {
+    this.cartService.removeFromCart(item);
+    this.cart = this.cartService.getCart();
+  }
 
+  clearCart(): void {
+    this.cartService.clearCart();
+    this.cart = [];
+  }
 
+  increaseQuantity(item:any){
+    this.cartService.increaseQuantity(item)
+  }
 
+isEmpty(): boolean{
+const cart=this.cartService.getCart();
+  return cart.length === 0;
+}
 
   
 
