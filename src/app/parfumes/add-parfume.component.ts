@@ -30,7 +30,7 @@ constructor(
         name: ['', Validators.required],
         company: ['', Validators.required],
         type: ['', Validators.required],
-        price: ["", Validators.required],
+        price: ['', Validators.required],
         img: ['', Validators.required],
       
     }
