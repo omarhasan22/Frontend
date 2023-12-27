@@ -102,7 +102,7 @@
   <!-- End Header -->
 
   <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog modal-fullscreen modal-dialog-end">
+    <div class="modal-dialog modal-xl modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Show Your Cart Items</h5>
@@ -116,7 +116,7 @@
              
               <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let i of cart">
                 <div class="d-flex align-items-center">
-                  <img [src]='"assets/img/perfume/"+i.img+".jpeg"' class="rounded-circle" alt=""
+                  <img [src]='"assets/img/perfume/"+i.img+".webp"' class="rounded-circle" alt=""
                     style="width: 45px; height: 45px" />
                   <div class="ms-3">
                     <p class="fw-bold mb-1">{{i.name}}</p>
@@ -124,30 +124,21 @@
                   </div>
                   <span>{{i.price}}</span>
                 </div>
-            <!-- <span class="rounded-pill">{{i.quantity}} items</span> -->
-                <!-- <div>
-                    <button class="icon-btn add-btn" (click)="increaseQuantity(i)">
-                    <div class="add-icon"></div>
-                    <div class="btn-txt">Add</div>
-                  </button>
-                </div>
-                <hr>
-                <div>
-                    <button  class="icon-btn add-btn" (click)="removeFromCart(i)">  
-                    <div class="btn-txt">Remove</div>
-                  </button>
-                </div> -->
+    
                 <div class=" w-auto justify-content-end align-items-center">
                   <input (click)="removeFromCart(i)" type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm " data-field="quantity">
                   <span>{{i.quantity}}</span>
                   <input (click)="increaseQuantity(i)" type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm " data-field="quantity">
                </div>
               </li>
-           <li style="list-style-type: none;" *ngIf="!isEmpty()"><button class="btn btn-warning" (click)="clearCart()">clear</button></li>
+           <li style="list-style-type: none;">Total Price: <strong>{{totalPrice()}}$</strong> </li>
+              <li style="list-style-type: none;" *ngIf="!isEmpty()"><button class="btn btn-warning" (click)="clearCart()">clear</button></li>
+              <li style="list-style-type: none;" ><button class="btn btn-success">Purshase</button></li>
             </ul>
             </div>
 
           </form>
+      
         </div>
       </div>
     </div>

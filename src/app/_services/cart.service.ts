@@ -85,6 +85,16 @@ items: Parfume[]=[];
     }
   }
 
+  getTotalPrice(cart: any[]): number {
+    return cart.reduce((total, item) => {
+      const itemPrice = item.price || 0;
+      const itemQuantity = item.quantity || 1;
+      return total + itemPrice * itemQuantity;
+    }, 0);
+  }
+
+
+
   // getItems(name:any){
     
   //   const cookies = document.cookie.split("; ");

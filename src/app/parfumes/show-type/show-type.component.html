@@ -1,10 +1,10 @@
 
 <section id="about" class="about">
    
-    <div class="container"> <h2 style="text-align: center; font-family:cursive; color: #8cac6c;text-shadow: 5px 4px 3px #c0c8b9;">Our Perfumes</h2> </div>
+    <div class="container" *ngIf="perfume"> <h2 style="text-align: center; font-family:cursive; color: #8cac6c;text-shadow: 5px 4px 3px #c0c8b9;">{{type}} Perfumes</h2> </div>
   
   
-    <div class="container">
+    <!-- <div class="container">
     <div id="carouselExample" class="carousel slide">
       <div class="carousel-inner"   style="min-height: 23rem;"  >
         <div class="carousel-item active">
@@ -15,7 +15,6 @@
         <div (click)="showProfile(t.id)" class="profile-card-2"><img style="max-width: 100%; height: auto;" [src]='"assets/img/perfume/"+t.img+".webP"'  class="img img-responsive">
             <div class="profile-name">{{t.name}}</div>
             <div class="profile-username">{{t.company}}</div>
-            <!-- <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div> -->
         </div>
     </div>
   
@@ -37,7 +36,28 @@
   
   
   </div>
+   -->
+
   
+<div class="container">
+  <div class="row">
+  
+    <div class="col-6 col-md-4 col-lg-3 mb-4" *ngFor="let t of perfume">
+      <div class="card" (click)="showProfile(t.id)">
+        <img class="card-img-top" [src]='"assets/img/perfume/"+t.img+".webp"' alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">{{t.name}}</p>
+        
+        </div>
+        <p class="card-price"> <em>{{t.price}}$ </em> </p>
+      </div>
+    </div>
+  
+  
+  
+  </div>
+  
+  </div>
   
   
   

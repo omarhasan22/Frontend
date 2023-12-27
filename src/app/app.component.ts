@@ -72,9 +72,6 @@ export class AppComponent implements OnInit {
 
 
 
-
-
-      
   itemCount(){
     return this.cartService.getCartItemCount()
   }
@@ -98,7 +95,9 @@ const cart=this.cartService.getCart();
   return cart.length === 0;
 }
 
-  
+  totalPrice(): number{
+    return this.cartService.getTotalPrice(this.cartService.getCart());
+  }
 
 
     

@@ -5,12 +5,14 @@ import { first } from 'rxjs';
 
 @Component({
   selector: 'app-show-type',
-  templateUrl: './show-type.component.html'
+  templateUrl: './show-type.component.html',
+  styleUrls: ['./show-type.component.css']
 })
 export class ShowTypeComponent {
 
   
   perfume?:any;
+  type?:any;
 
   constructor(private parfumeService: ParfumeService ,private route: ActivatedRoute,private router: Router) {}
 
@@ -18,6 +20,7 @@ export class ShowTypeComponent {
     // Retrieve the perfume ID from the route parameters
     this.route.params.subscribe(params => {
         const type = params['type'];
+        this.type=type
         this.parfumeService.getByType(type)
         .pipe(first())
         .subscribe(perfume => this.perfume = perfume);
