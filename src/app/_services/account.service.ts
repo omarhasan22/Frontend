@@ -49,7 +49,7 @@ export class AccountService {
     }
 
     refreshToken() {
-        console.log("from refr")
+        //console.log("from refr")
         return this.http.post<any>(`${baseUrl}/refresh-token`, {}, { withCredentials: true })
             .pipe(map((account) => {
                 //console.log(account)
