@@ -3,15 +3,15 @@
   <div class="container "> <h2 style="text-align: center; font-family:cursive; color: #8cac6c;text-shadow: 5px 4px 3px #c0c8b9;">Our Perfumes</h2> </div>
 
 
-
+<div class="container">
 <div class="row">
 
-  <div class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let perfume of parfumes">
+  <div class="col-6 col-md-4 col-lg-3 mb-4" *ngFor="let perfume of parfumes">
     <div class="card">
       <img class="card-img-top" [src]='"assets/img/perfume/"+perfume.img+".webp"' alt="Card image cap">
       <div class="card-body">
         <p class="card-text">{{perfume.name}}</p>
-        <p class="card-price">{{perfume.price}}$</p>
+        <p class="card-price"> <em>{{perfume.price}}$ </em> </p>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
 
 </div>
 
-
+</div>
 
 
 
