@@ -4,6 +4,7 @@ import { AccountService, CartService, ParfumeService } from './_services';
 import { Account, Role } from './_models';
 import { ActivatedRoute } from '@angular/router';
 import { first, pipe } from 'rxjs';
+import { PaymentService } from './_services/payment.service';
 
 @Component({ selector: 'app-root',
  templateUrl: 'app.component.html' ,
@@ -22,7 +23,10 @@ export class AppComponent implements OnInit {
     constructor(
         private accountService: AccountService,
         private route: ActivatedRoute,
-        public cartService: CartService
+        public cartService: CartService,
+
+
+        private stripeService: PaymentService
         ) {
         this.accountService.account.subscribe(x => this.account = x);
         // this.cart = this.cartService.getCart();
@@ -101,4 +105,21 @@ const cart=this.cartService.getCart();
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

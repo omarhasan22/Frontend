@@ -1,6 +1,6 @@
 ﻿import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
@@ -15,6 +15,7 @@ import { HeroComponent } from './hero/hero.component';
 import { AddParfumeComponent } from './parfumes/add-parfume.component';
 import { FirstListComponent } from './parfumes/first-list/first-list.component';
 import { ShowATtypeComponent } from './parfumes/show-attype/show-attype.component';
+import { PaymentComponent } from './parfumes/payment/payment.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ShowATtypeComponent } from './parfumes/show-attype/show-attype.componen
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
     declarations: [
         AppComponent,
@@ -30,7 +32,9 @@ import { ShowATtypeComponent } from './parfumes/show-attype/show-attype.componen
         HomeComponent,
         HeroComponent,
         FirstListComponent,
-        ShowATtypeComponent
+        ShowATtypeComponent,
+        PaymentComponent,
+        
 
     ],
     providers: [

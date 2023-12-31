@@ -133,9 +133,18 @@
               </li>
            <li style="list-style-type: none;">Total Price: <strong>{{totalPrice()}}$</strong> </li>
               <li style="list-style-type: none;" *ngIf="!isEmpty()"><button class="btn btn-warning" (click)="clearCart()">clear</button></li>
-              <li style="list-style-type: none;" ><button class="btn btn-success">Purshase</button></li>
+              <li style="list-style-type: none;" ><button [routerLink]="['/Parfumes/charge']"  class="btn btn-success">Purshase</button></li>
             </ul>
             </div>
+
+
+           
+
+
+
+
+
+
 
           </form>
       
