@@ -26,7 +26,27 @@ export class PaymentComponent implements OnInit {
     this.cart = this.cartService.getCart();
 
   }
-
+  getCustomerId():any{
+   return this.account.accountValue?.id;
+  }
+  getCustomerEmail():any{
+    return this.account.accountValue?.email;
+   } 
+ 
+  getbilling_details() {
+      return {
+        name: this.account.accountValue?.firstName ,
+        address: {
+          line1:'' ,
+          city: '',
+          state:'',
+          postal_code:'',
+          country: '',
+        },
+        email: this.account.accountValue?.email,
+        phone: this.account.accountValue?.role,
+      };
+    }
   private initializeStripe() {
     this.stripe = Stripe('pk_test_51OS2RvH1jy8FFcmKjLHUSxgiIgq77LfDGpAxdhlYz0Gpt8gvwE8dT8mi4To5VT3Tu4aaj0oTxr4eue9XppU9B3Lb00EhWrkDIm');
     const elements = this.stripe.elements();
@@ -38,7 +58,7 @@ export class PaymentComponent implements OnInit {
     this.card.mount('#card-element');
   }
 
-  onSubmit(price:number) {
+  onSubmit(price:number, description:any, email:any, billing_details:any) {
     // Handle form submission
     this.stripe.createToken(this.card).then((result: { error: any; token: { id: string; }; }) => {
       if (result.error) {
@@ -46,7 +66,7 @@ export class PaymentComponent implements OnInit {
         console.error(result.error);
       } else {
         // Send the token to your server using the payment service
-        this.paymentService.processPayment(result.token.id, this.account.accountValue?.email , price,'sample')
+        this.paymentService.processPayment(result.token.id, price,description, email, billing_details)
           .subscribe(
             (response) => {
               if (response.success) {

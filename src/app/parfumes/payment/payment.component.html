@@ -30,6 +30,7 @@
 
 <div>
   <h2>Payment Form</h2>
+
   <form id="payment-form">
     <div id="card-element">
       <!-- A Stripe Element will be inserted here. -->
@@ -37,7 +38,7 @@
 
     <!-- Used to display form errors. -->
     <div id="card-errors" role="alert"></div>
-
-    <button type="button" (click)="onSubmit(totalPrice())">Submit Payment</button>
+<p>4242 4242 4242 4242</p>
+    <button type="button" (click)="onSubmit(totalPrice(),getCustomerId(), getCustomerEmail(), getbilling_details())">Submit Payment</button>
   </form>
 </div>
