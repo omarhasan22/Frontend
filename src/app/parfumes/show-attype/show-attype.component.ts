@@ -25,8 +25,8 @@ typesOfPerfumes?:any[];
     .subscribe(parfume => this.typesOfPerfumes = parfume);
   }
 
-  showtype(type: string){
-    this.router.navigate(['Parfumes/perfumeType', type]);
+  showtype(company: string){
+    this.router.navigate(['Parfumes/perfumeType', company]);
   }
 
 }
