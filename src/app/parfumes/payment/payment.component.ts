@@ -6,7 +6,8 @@ declare var Stripe: any;
 
 @Component({
   selector: 'app-payment',
-  templateUrl: './payment.component.html'
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
   private stripe: any;
@@ -71,6 +72,7 @@ export class PaymentComponent implements OnInit {
             (response) => {
               if (response.success) {
                 // Payment successful
+                alert("Payment successful!! you will receive an email");
                 console.log('Payment successful:', response.charge);
               } else {
                 // Payment failed

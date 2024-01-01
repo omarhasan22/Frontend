@@ -1,5 +1,5 @@
-
-<div style="margin-top: 5rem;"><h1>cart Items</h1></div>
+<!-- <div class="container" style="padding: 7rem 20rem;">
+<div style="margin-top: 5rem; "><h1 >cart Items</h1></div>
 <div >
             
   <ul class="list-group list-group-light">
@@ -33,12 +33,94 @@
 
   <form id="payment-form">
     <div id="card-element">
-      <!-- A Stripe Element will be inserted here. -->
+    
     </div>
 
-    <!-- Used to display form errors. -->
+   
     <div id="card-errors" role="alert"></div>
 <p>4242 4242 4242 4242</p>
     <button type="button" (click)="onSubmit(totalPrice(),getCustomerId(), getCustomerEmail(), getbilling_details())">Submit Payment</button>
   </form>
+</div>
+</div> -->
+
+<div class="card">
+  <div class="card-top border-bottom text-center">
+       <a href="#"> Back to shop</a>
+      <span id="logo">BBBootstrap.com</span>
+  </div>
+  <div class="card-body">
+    
+      <div class="row">
+          <div class="col-md-7">
+              <div class="left border">
+                  <div class="row">
+                      <span class="header">Payment</span>
+                      <div class="icons">
+                          <img src="https://img.icons8.com/color/48/000000/visa.png"/>
+                          <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png"/>
+                          <img src="https://img.icons8.com/color/48/000000/maestro.png"/>
+                      </div>
+                  </div>
+                  <form>
+                    <h6> <strong>for test:</strong> </h6>
+                    <p> <strong>Visa:</strong>  4242 4242 4242 4242</p> 
+                    <p> <strong>MasterCard:</strong>   5555 5555 5555 4444</p>
+                    <div  id="card-element"></div>
+                      <!-- <span>Cardholder's name:</span>
+                      <input placeholder="Omar hasan">
+                      <span>Card Number:</span>
+                      <input placeholder="0125 6780 4567 9909">
+                      <div class="row">
+                          <div class="col-4"><span>Expiry date:</span>
+                              <input placeholder="YY/MM">
+                          </div>
+                          <div class="col-4"><span>CVV:</span>
+                              <input id="cvv">
+                          </div>
+                      </div> -->
+                   </form>
+              </div>                        
+          </div>
+          
+          <div class="col-md-5">
+              <div class="right border">
+                  <div class="header">Order Summary</div>
+                  <p>2 items</p>
+                  <div *ngFor="let i of cart" class="row item">
+                      <div   class="col-4 align-self-center"><img class="img-fluid" [src]='"assets/img/perfume/"+i.img+".webp"'></div>
+                      <div class="col-8">
+                        <div class="row">{{i.name}}</div>
+                          <div class="row"><b>$ {{i.price}}</b></div>
+                          <div class="row text-muted">{{i.company}}</div>
+                          <div class="row">Qty:{{i.quantity}}</div>
+                      </div>
+                      <!-- <div class=" w-auto justify-content-end align-items-center">
+                        <input (click)="removeFromCart(i)" type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm " data-field="quantity">
+                        
+                        <input (click)="increaseQuantity(i)" type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm " data-field="quantity">
+                     </div> -->
+                    </div>
+                  <hr>
+                  <div class="row lower">
+                      <div class="col text-left">Subtotal</div>
+                      <div class="col text-right">$ {{totalPrice()}}</div>
+                  </div>
+                  <div class="row lower">
+                      <div class="col text-left">Delivery</div>
+                      <div class="col text-right">Free</div>
+                  </div>
+                  <div class="row lower">
+                      <div class="col text-left"><b>Total to pay</b></div>
+                      <div class="col text-right"><b>$ {{totalPrice()}}</b></div>
+                  </div>
+                  <button class="btn" (click)="onSubmit(totalPrice(),getCustomerId(), getCustomerEmail(), getbilling_details())">Place order</button>
+                  <p class="text-muted text-center">Complimentary Shipping & Returns</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+<div>
+</div>
 </div>

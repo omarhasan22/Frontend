@@ -19,7 +19,7 @@ export class ShowTypeComponent {
   ngOnInit() {
     // Retrieve the perfume ID from the route parameters
     this.route.params.subscribe(params => {
-        const type = params['company'];
+        const type = params['type'];
         this.type=type
         this.parfumeService.getByType(type)
         .pipe(first())
