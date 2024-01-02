@@ -7,7 +7,6 @@ body{
     font-size: 0.8rem;
 }
 .card{
-    max-width: 1000px;
     margin: 2vh;
 }
 .card-top{
@@ -24,14 +23,14 @@ body{
 }
 .card-body{
     padding: 0 5rem 5rem 5rem;
-    background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+    background-color: #58a45011;
     background-size: cover;
     background-repeat: no-repeat;
 }
 @media(max-width:768px){
     .card-body{
         padding: 0 1rem 1rem 1rem;
-        background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+     background-color: #58a45011;
         background-size: cover;
         background-repeat: no-repeat;
     }  
@@ -144,3 +143,86 @@ input[type=checkbox]{
     background-position-x: 95%;
     background-position-y: center;
 } 
+
+
+
+
+
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 12px;
+      background: #ff0000;
+      color: #fff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
+  }
+
+.modal{
+ width: 32rem;
+  
+}
+
+  .container {
+    padding: 2rem 0rem;
+  }
+  
+  @media (min-width: 576px) {
+    .modal-dialog {
+      max-width: 400px;
+    }
+    .modal-dialog .modal-content {
+      padding: 1rem;
+    }
+  }
+  .modal-header .close {
+    margin-top: -1.5rem;
+  }
+  
+  .form-title {
+    margin: -2rem 0rem 2rem;
+  }
+  
+  .btn-round {
+    border-radius: 3rem;
+  }
+  
+  .delimiter {
+    padding: 1rem;
+  }
+  
+  .social-buttons .btn {
+    margin: 0 0.5rem 1rem;
+  }
+  
+  .signup-section {
+    padding: 0.3rem 0rem;
+  }
+
+
+
+  icon-shape {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.icon-sm {
+    width: 2rem;
+    height: 2rem;
+    
+}

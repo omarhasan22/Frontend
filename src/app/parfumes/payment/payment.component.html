@@ -47,7 +47,7 @@
 <div class="card">
   <div class="card-top border-bottom text-center">
        <a href="#"> Back to shop</a>
-      <span id="logo">BBBootstrap.com</span>
+      <span id="logo"></span>
   </div>
   <div class="card-body">
     
@@ -86,7 +86,7 @@
           <div class="col-md-5">
               <div class="right border">
                   <div class="header">Order Summary</div>
-                  <p>2 items</p>
+                  <p>{{itemCount()}} items</p>
                   <div *ngFor="let i of cart" class="row item">
                       <div   class="col-4 align-self-center"><img class="img-fluid" [src]='"assets/img/perfume/"+i.img+".webp"'></div>
                       <div class="col-8">
@@ -95,11 +95,11 @@
                           <div class="row text-muted">{{i.company}}</div>
                           <div class="row">Qty:{{i.quantity}}</div>
                       </div>
-                      <!-- <div class=" w-auto justify-content-end align-items-center">
+                      <div class=" w-auto justify-content-end align-items-center">
                         <input (click)="removeFromCart(i)" type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm " data-field="quantity">
                         
                         <input (click)="increaseQuantity(i)" type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm " data-field="quantity">
-                     </div> -->
+                     </div>
                     </div>
                   <hr>
                   <div class="row lower">
